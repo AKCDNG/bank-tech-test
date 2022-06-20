@@ -2358,3 +2358,7 @@ node_modules/yallist/package.json
 node_modules/yallist/README.md
 node_modules/yallist/yallist.js
 node_modules/@ampproject/remapping/README.md
+node_modules/@types/sinonjs__fake-timers/index.d.ts
+node_modules/@types/sinonjs__fake-timers/LICENSE
+node_modules/@types/sinonjs__fake-timers/package.json
+node_modules/@types/sinonjs__fake-timers/README.md
