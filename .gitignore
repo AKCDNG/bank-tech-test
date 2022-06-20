@@ -2362,3 +2362,11 @@ node_modules/@types/sinonjs__fake-timers/index.d.ts
 node_modules/@types/sinonjs__fake-timers/LICENSE
 node_modules/@types/sinonjs__fake-timers/package.json
 node_modules/@types/sinonjs__fake-timers/README.md
+node_modules/jest-date-mock/LICENSE
+node_modules/jest-date-mock/package.json
+node_modules/jest-date-mock/README.md
+node_modules/jest-date-mock/.github/FUNDING.yml
+node_modules/jest-date-mock/lib/date.js
+node_modules/jest-date-mock/lib/index.d.ts
+node_modules/jest-date-mock/lib/index.js
+node_modules/jest-date-mock/lib/mockDate.js
