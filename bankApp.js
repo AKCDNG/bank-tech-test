@@ -13,7 +13,8 @@ class bankApp {
   }
 
   statement() {
-    return this.statement;
+    const statementTotal = this.statement.forEach(statementLine => {console.log(statementLine)})
+    return statementTotal;
   }
 
 }
