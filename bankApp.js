@@ -6,20 +6,28 @@ class BankApp {
   }
 
   deposit (amount, date) {
-    this.balance += amount
-    this.amountInTransaction = amount
-    this.statement.push(`${date} || ${parseFloat(this.amountInTransaction).toFixed(2)} || || ${parseFloat(this.balance).toFixed(2)}`)
+    this.#calculateDeposit(amount, date)
   }
 
   withdraw (amount, date) {
-    this.balance -= amount
-    this.amountInTransaction = amount
-    this.statement.push(`${date} || || ${parseFloat(this.amountInTransaction).toFixed(2)} || ${parseFloat(this.balance).toFixed(2)}`)
+    this.#calculateWithdrawal(amount, date)
   }
 
   statement () {
     const statementTotal = this.statement.forEach(statementLine => { console.log(statementLine) })
     return statementTotal
+  }
+
+  #calculateDeposit(amount, date) {
+    this.balance += amount
+    this.amountInTransaction = amount
+    this.statement.push(`${date} || ${parseFloat(this.amountInTransaction).toFixed(2)} || || ${parseFloat(this.balance).toFixed(2)}`)
+  }
+
+  #calculateWithdrawal(amount, date) {
+    this.balance -= amount
+    this.amountInTransaction = amount
+    this.statement.push(`${date} || || ${parseFloat(this.amountInTransaction).toFixed(2)} || ${parseFloat(this.balance).toFixed(2)}`)
   }
 }
 
