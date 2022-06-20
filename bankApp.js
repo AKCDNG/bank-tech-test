@@ -1,6 +1,6 @@
 class BankApp {
   constructor () {
-    this.statement = ['date || credit || debit || balance']
+    this.statement = []
     this.balance = 0
     this.amountInTransaction = 0
   }
@@ -13,8 +13,8 @@ class BankApp {
     this.#calculateWithdrawal(amount, date)
   }
 
-  statement () {
-    this.#calculateStatement()
+  viewStatement () {
+    return this.#calculateStatement()
   }
 
   //private methods to calculate deposit, withdrawal and statement.
@@ -32,8 +32,8 @@ class BankApp {
   }
 
   #calculateStatement() {
-    const statementTotal = this.statement.forEach(statementLine => { console.log(statementLine) })
-    return statementTotal
+    this.statement.reverse().unshift('date || credit || debit || balance');
+    return this.statement
   }
 }
 
