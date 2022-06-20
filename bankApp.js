@@ -13,7 +13,9 @@ class BankApp {
   }
 
   withdraw(amount, date) {
-    this.statement.push('24/07/2022 || || 40.00 || 60.00')
+    this.balance -= amount;
+    this.amountInTransaction = amount
+    this.statement.push(`${date} || || ${parseFloat(this.amountInTransaction).toFixed(2)} || ${parseFloat(this.balance).toFixed(2)}`);
   }
 
   statement() {
