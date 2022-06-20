@@ -1,3 +1,4 @@
+const { it } = require('@jest/globals');
 const BankApp = require('./bankApp');
 jest
   .useFakeTimers()
@@ -30,5 +31,11 @@ describe('Bank App Testing', () => {
     '19/07/2022 || || 500.00 || 2500.00',
     '19/07/2022 || 2000.00 || || 3000.00',
     '19/07/2022 || 1000.00 || || 1000.00'])
+  })
+
+  it('Returns string to user if withdrawal amount is too high', () => {
+    const bank = new BankApp();
+
+    expect(bank.withdraw(100)).toEqual('Your withdrawal exceeds your balance. Please withdraw a maximum of £0')
   })
 })
