@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AKCDNG/bank-tech-test/issues"
   },
-  "homepage": "https://github.com/AKCDNG/bank-tech-test#readme"
+  "homepage": "https://github.com/AKCDNG/bank-tech-test#readme",
+  "dependencies": {
+    "@jest/globals": "^28.1.1"
+  }
 }
