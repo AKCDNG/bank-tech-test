@@ -15,4 +15,17 @@ describe('Bank App Testing', () => {
     bank.withdraw(40, '24/07/2022');
     expect(bank.statement).toEqual(['date || credit || debit || balance', '19/07/2022 || 100.00 || || 100.00', '24/07/2022 || || 40.00 || 60.00'])
   })
+
+  it('Tests the given criteria, (original criteria is within README', () => {
+    const bank = new BankApp();
+
+    bank.deposit(1000, '10/01/2023');
+    bank.deposit(2000, '13/01/2023');
+    bank.withdraw(500, '14/01/2023');
+
+    expect(bank.statement).toEqual(['date || credit || debit || balance',
+    '10/01/2023 || 1000.00 || || 1000.00',
+    '13/01/2023 || 2000.00 || || 3000.00',
+    '14/01/2023 || || 500.00 || 2500.00'])
+  })
 })
