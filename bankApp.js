@@ -12,6 +12,10 @@ class BankApp {
   }
 
   withdraw (amount) {
+    if(this.balance - amount < 0) {
+      return (`Your withdrawal exceeds your balance. Please withdraw a maximum of £${this.balance}`);
+    }
+
     this.#calculateWithdrawal(amount, this.todaysDate)
   }
 
@@ -34,7 +38,7 @@ class BankApp {
   }
 
   #calculateStatement() {
-    this.statement.reverse().unshift('date || credit || debit || balance');
+    this.statement.reverse().unshift('date || credit || debit || balance')
     return this.statement
   }
   #calculateDate() {
