@@ -6,6 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
+  "jest": {
+    "setupFiles": ["jest-date-mock"]
+  },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AKCDNG/bank-tech-test.git"
@@ -18,13 +23,17 @@
   },
   "homepage": "https://github.com/AKCDNG/bank-tech-test#readme",
   "dependencies": {
-    "@jest/globals": "^28.1.1"
+    "@jest/fake-timers": "^28.1.1",
+    "@jest/globals": "^28.1.1",
+    "@sinonjs/fake-timers": "^9.1.2"
   },
   "devDependencies": {
+    "@types/sinonjs__fake-timers": "^8.1.2",
     "eslint": "^8.18.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.3",
-    "eslint-plugin-promise": "^6.0.0"
+    "eslint-plugin-promise": "^6.0.0",
+    "jest-date-mock": "^1.0.8"
   }
 }
