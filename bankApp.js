@@ -1,4 +1,4 @@
-class bankApp {
+class BankApp {
 
   constructor() {
     this.statement = ['date || credit || debit || balance'];
@@ -19,4 +19,4 @@ class bankApp {
 
 }
 
-module.exports = bankApp;
+module.exports = BankApp;
