@@ -14,9 +14,10 @@ class BankApp {
   }
 
   statement () {
-    const statementTotal = this.statement.forEach(statementLine => { console.log(statementLine) })
-    return statementTotal
+    this.#calculateStatement()
   }
+
+  //private methods to calculate deposit, withdrawal and statement.
 
   #calculateDeposit(amount, date) {
     this.balance += amount
@@ -28,6 +29,11 @@ class BankApp {
     this.balance -= amount
     this.amountInTransaction = amount
     this.statement.push(`${date} || || ${parseFloat(this.amountInTransaction).toFixed(2)} || ${parseFloat(this.balance).toFixed(2)}`)
+  }
+
+  #calculateStatement() {
+    const statementTotal = this.statement.forEach(statementLine => { console.log(statementLine) })
+    return statementTotal
   }
 }
 
