@@ -6,10 +6,10 @@ class bankApp {
     this.amountInTransaction = 0
   }
 
-  deposit(amount) {
+  deposit(amount, date) {
     this.balance += amount;
     this.amountInTransaction = amount
-    this.statement.push(`${'19/07/2022'} || ${parseFloat(this.amountInTransaction).toFixed(2)} || || ${parseFloat(this.balance).toFixed(2)}`);
+    this.statement.push(`${date} || ${parseFloat(this.amountInTransaction).toFixed(2)} || || ${parseFloat(this.balance).toFixed(2)}`);
   }
 
   statement() {
