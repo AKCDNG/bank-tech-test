@@ -37,8 +37,12 @@ class BankApp {
   }
 
   #calculateStatement () {
-    this.statement.reverse().unshift('date || credit || debit || balance')
-    return this.statement
+    if(this.statement.includes('date || credit || debit || balance')) {
+      return this.statement
+    } else {
+      this.statement.reverse().unshift('date || credit || debit || balance')
+      return this.statement
+    }
   }
 }
 
