@@ -1,10 +1,9 @@
 class BankApp {
-  constructor () {
+  constructor (date) {
     this.statement = []
     this.balance = 0
     this.amountInTransaction = 0
-    this.date = new Date()
-    this.todaysDate = this.#calculateDate()
+    this.todaysDate = date.calculateDate()
   }
 
   deposit (amount) {
