@@ -1,6 +1,6 @@
 class BankApp {
-  constructor (date) {
-    this.statement = []
+  constructor (date, statement) {
+    this.statement = statement
     this.balance = 0
     this.amountInTransaction = 0
     this.todaysDate = date.calculateDate()
@@ -19,7 +19,7 @@ class BankApp {
   }
 
   viewStatement () {
-    return this.#calculateStatement()
+    return this.statement.calculateStatement()
   }
 
   // private methods to calculate deposit, withdrawal and statement.
@@ -27,22 +27,13 @@ class BankApp {
   #calculateDeposit (amount) {
     this.balance += amount
     this.amountInTransaction = amount
-    this.statement.push(`${this.todaysDate} || ${parseFloat(this.amountInTransaction).toFixed(2)} || || ${parseFloat(this.balance).toFixed(2)}`)
+    this.statement.bankStatement.push(`${this.todaysDate} || ${parseFloat(this.amountInTransaction).toFixed(2)} || || ${parseFloat(this.balance).toFixed(2)}`)
   }
 
   #calculateWithdrawal (amount) {
     this.balance -= amount
     this.amountInTransaction = amount
-    this.statement.push(`${this.todaysDate} || || ${parseFloat(this.amountInTransaction).toFixed(2)} || ${parseFloat(this.balance).toFixed(2)}`)
-  }
-
-  #calculateStatement () {
-    if(this.statement.includes('date || credit || debit || balance')) {
-      return this.statement
-    } else {
-      this.statement.reverse().unshift('date || credit || debit || balance')
-      return this.statement
-    }
+    this.statement.bankStatement.push(`${this.todaysDate} || || ${parseFloat(this.amountInTransaction).toFixed(2)} || ${parseFloat(this.balance).toFixed(2)}`)
   }
 }
 
