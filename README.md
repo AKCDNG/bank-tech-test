@@ -58,7 +58,7 @@ Call `.viewStatement()` to show your bank statement.
 5. Make a withdrawal:
 ![make a withdrawal](images/7-Wtihdraw-after-deposit.png)
 6. If you make a withdrawal for an amount greater than your balance, you will receive a message:
-![withdrawal error message](images/7-Wtihdraw-after-deposit.png)
+![withdrawal error message](images/6-Withdraw-limiter.png)
 7. View your statement:
 ![view statement](images/5-View-statement.png)
 
