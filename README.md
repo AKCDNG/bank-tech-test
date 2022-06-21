@@ -36,11 +36,32 @@ This system was built using the following [TDD](https://en.wikipedia.org/wiki/Te
 Fork or download this repo.
 Use `npm install` to install the correct dependancies to use and test this code. You can require the code from terminal, or copy & paste it in Node.
 
+## My Approach
+I initially made an input / output table. Since only one class was needed, I did not feel like it was necessary to create a UML class diagram.
+
 ## How To Use
 Make a new instance of bank with `const bank = new bankApp();`.
+
 Call `.deposit(x)` to deposit `x` money into your bank account.
 Call `.withdraw(x)` to withdraw `x` money into your bank account.
 Call `.viewStatement()` to show your bank statement.
+
+## An Example Of Usage
+1. Run Node:
+![run node in terminal](images/1-run-Node.png)
+2. Require BankApp within a variable:
+![require bank app](images/2-require-bankApp.png)
+3. Make a new instance of BankApp:
+![new instance of bank app](images/4-make-new-bankapp-var-in-node.png)
+4. Make a new deposit:
+![deposit money into bank](images/3-Deposit.png)
+5. Make a withdrawal:
+![make a withdrawal](images/7-Wtihdraw-after-deposit.png)
+6. If you make a withdrawal for an amount greater than your balance, you will receive a message:
+![withdrawal error message](images/7-Wtihdraw-after-deposit.png)
+7. View your statement:
+![view statement](images/5-View-statement.png)
+
 
 ## How To Test
 Run `jest` to run through tests.
