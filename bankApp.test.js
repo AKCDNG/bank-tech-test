@@ -1,14 +1,14 @@
 const { it } = require('@jest/globals');
 const BankApp = require('./bankApp');
 const DateCalculator = require('./dateCalculator')
-const statementCalculator = require('./statementCalculator')
+const statementPrinter = require('./statementPrinter')
 jest.mock('./dateCalculator.js')
-jest.mock('./statementCalculator')
+jest.mock('./statementPrinter')
 
 beforeEach(() => {
   // Clear all instances and calls to constructor and all methods:
   DateCalculator.mockClear()
-  statementCalculator.mockClear()
+  statementPrinter.mockClear()
 });
 
 jest
@@ -18,7 +18,7 @@ jest
 describe('Bank App Testing', () => {
   it('Deposits £100 and show statement with £100 credit and £100 balance on 19/07/2022', () => {
     const dateCalc = new DateCalculator()
-    const statementCalc = new statementCalculator()
+    const statementCalc = new statementPrinter()
     dateCalc.calculateDate.mockImplementation(() => {return '19/07/2022'})
     statementCalc.bankStatement = []
     statementCalc.calculateStatement.mockImplementation(() => {return ['date || credit || debit || balance', '19/07/2022 || 100.00 || || 100.00']})
@@ -32,7 +32,7 @@ describe('Bank App Testing', () => {
 
   it('Shows withdrawal of £40 on 19th July 2022 after deposit of £100', () => {
     const dateCalc = new DateCalculator()
-    const statementCalc = new statementCalculator()
+    const statementCalc = new statementPrinter()
     dateCalc.calculateDate.mockImplementation(() => {return '19/07/2022'})
     statementCalc.bankStatement = []
     statementCalc.calculateStatement.mockImplementation(() => {return ['date || credit || debit || balance', '19/07/2022 || || 40.00 || 60.00', '19/07/2022 || 100.00 || || 100.00']})
@@ -46,7 +46,7 @@ describe('Bank App Testing', () => {
 
   it('Tests the given criteria, (original criteria is within README) with reversed list of transactions', () => {
     const dateCalc = new DateCalculator()
-    const statementCalc = new statementCalculator()
+    const statementCalc = new statementPrinter()
     dateCalc.calculateDate.mockImplementation(() => {return '19/07/2022'})
     statementCalc.bankStatement = []
     statementCalc.calculateStatement.mockImplementation(() => {return ['date || credit || debit || balance',
@@ -68,7 +68,7 @@ describe('Bank App Testing', () => {
 
   it('Returns string to user if withdrawal amount is too high', () => {
     const dateCalc = new DateCalculator()
-    const statementCalc = new statementCalculator()
+    const statementCalc = new statementPrinter()
     dateCalc.calculateDate.mockImplementation(() => {return '19/07/2022'})
     statementCalc.bankStatement = []
     statementCalc.calculateStatement.mockImplementation(() => {return 'Your withdrawal exceeds your balance. Please withdraw a maximum of £0'})
