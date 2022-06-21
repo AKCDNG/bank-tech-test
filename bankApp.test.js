@@ -1,19 +1,28 @@
 const { it } = require('@jest/globals');
 const BankApp = require('./bankApp');
+const DateCalculator = require('./dateCalculator')
+jest.mock('./dateCalculator.js')
+
 jest
   .useFakeTimers()
   .setSystemTime(new Date('2022-07-19'));
 
 describe('Bank App Testing', () => {
   it('Deposits £100 and show statement with £100 credit and £100 balance on 19/07/2022', () => {
-    const bank = new BankApp();
+    const dateCalc = new DateCalculator()
+    dateCalc.calculateDate.mockImplementation(() => {return '19/07/2022'})
+
+    const bank = new BankApp(dateCalc);
 
     bank.deposit(100);
     expect(bank.viewStatement()).toEqual(['date || credit || debit || balance', '19/07/2022 || 100.00 || || 100.00'])
   })
 
   it('Shows withdrawal of £40 on 19th July 2022 after deposit of £100', () => {
-    const bank = new BankApp();
+    const dateCalc = new DateCalculator()
+    dateCalc.calculateDate.mockImplementation(() => {return '19/07/2022'})
+
+    const bank = new BankApp(dateCalc);
 
     bank.deposit(100);
     bank.withdraw(40);
@@ -21,7 +30,10 @@ describe('Bank App Testing', () => {
   })
 
   it('Tests the given criteria, (original criteria is within README) with reversed list of transactions', () => {
-    const bank = new BankApp();
+    const dateCalc = new DateCalculator()
+    dateCalc.calculateDate.mockImplementation(() => {return '19/07/2022'})
+
+    const bank = new BankApp(dateCalc);
 
     bank.deposit(1000);
     bank.deposit(2000);
@@ -34,7 +46,10 @@ describe('Bank App Testing', () => {
   })
 
   it('Returns string to user if withdrawal amount is too high', () => {
-    const bank = new BankApp();
+    const dateCalc = new DateCalculator()
+    dateCalc.calculateDate.mockImplementation(() => {return '19/07/2022'})
+
+    const bank = new BankApp(dateCalc);
 
     expect(bank.withdraw(100)).toEqual('Your withdrawal exceeds your balance. Please withdraw a maximum of £0')
   })
