@@ -49,8 +49,8 @@ Call `.viewStatement()` to show your bank statement.
 ## An Example Of Usage
 1. Run Node:
 ![run node in terminal](images/1-run-Node.png)
-2. Require BankApp within a variable:
-![require bank app](images/2-require-bankApp.png)
+2. Setup the project with the following code:
+![require bank app](images/project-setup.png)
 3. Make a new instance of BankApp:
 ![new instance of bank app](images/4-make-new-bankapp-var-in-node.png)
 4. Make a new deposit:
