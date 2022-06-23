@@ -11,10 +11,6 @@ beforeEach(() => {
   statementPrinter.mockClear()
 });
 
-jest
-  .useFakeTimers()
-  .setSystemTime(new Date('2022-07-19'));
-
 describe('Bank App Testing', () => {
   it('Deposits £100 and show statement with £100 credit and £100 balance on 19/07/2022', () => {
     const dateCalc = new DateCalculator()
