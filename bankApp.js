@@ -22,8 +22,6 @@ class BankApp {
     return this.statement.calculateStatement()
   }
 
-  // private methods to calculate deposit, withdrawal and statement.
-
   #calculateDeposit (amount) {
     this.balance += amount
     this.amountInTransaction = amount
