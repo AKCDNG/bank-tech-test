@@ -37,7 +37,18 @@ Fork or download this repo.
 Use `npm install` to install the correct dependancies to use and test this code. You can require the code from terminal, or copy & paste it in Node.
 
 ## My Approach
-I initially made an input / output table. Since only one class was needed, I did not feel like it was necessary to create a UML class diagram.
+
+### Input & Output Table
+I initially made an input / output table to get an understanding of what the result of the code should look like.=:
+![input output table](images/bank-input-output.jpg)
+
+### UML Class Diagram
+I also created a UML Class Diagram. This program would be split into three classes that handle different responsibilities:
+1. `bank` - The main class. This will be responsible for depositing, withdrawing and printing the statement.
+2. `dateCalculator` - This class essentially formats the date into a `dd/mm/yyyy` format to be used. Dependency injected into `bank`.
+3. `statementPrinter` - This class formats the statement, whilst being loosely coupled. Dependancy injected into `bank`.
+
+![UML Class Diagram](images/UMLClassDiagram.jpg)
 
 ## How To Use
 Make a new instance of bank with `const bank = new bankApp();`.
