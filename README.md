@@ -39,7 +39,8 @@ Use `npm install` to install the correct dependancies to use and test this code.
 ## My Approach
 
 ### Input & Output Table
-I initially made an input / output table to get an understanding of what the result of the code should look like.=:
+I initially made an input / output table to get an understanding of what the result of the code should look like:
+
 ![input output table](images/bank-input-output.jpg)
 
 ### UML Class Diagram
