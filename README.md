@@ -23,7 +23,7 @@
                               @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                
                               @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                              
                                 @@@@@/             .@@@@@@@@@@@@@@ 
-        ```
+```
 ### This program is designed to emulate a bank statement. The functionality is as follows:
 
 * View your statement - formatted with a header at the top, with the most recent transactions first.
