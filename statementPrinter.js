@@ -1,17 +1,13 @@
 class statementPrinter {
 
-  constructor() {
-    this.bankStatement = []
-  }
-
-  calculateStatement () {
-    if(this.bankStatement.includes('date || credit || debit || balance')) {
-      this.bankStatement.shift()
-      this.bankStatement.reverse().unshift('date || credit || debit || balance')
-      return this.bankStatement
+  calculateStatement (statement) {
+    if(statement.includes('date || credit || debit || balance')) {
+      statement.shift()
+      statement.reverse().unshift('date || credit || debit || balance')
+      return statement
     } else {
-      this.bankStatement.reverse().unshift('date || credit || debit || balance')
-      return this.bankStatement
+      statement.reverse().unshift('date || credit || debit || balance')
+      return statement
     }
   }
 }
